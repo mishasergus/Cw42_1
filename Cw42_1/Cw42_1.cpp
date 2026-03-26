@@ -6,7 +6,7 @@
 #include <vector>
 #include <string>
 
-struct  Student
+class  Student
 {
 private:
     std::string name;
@@ -106,4 +106,8 @@ int main()
 
     auto iterator6 = std::none_of(items.begin(), items.end(), [](Student* s) {return s->get_age() <= 16; });
     std::cout << iterator6 << std::endl;
+
+    for (Student* s : items) {
+        delete s;
+    }
 }
